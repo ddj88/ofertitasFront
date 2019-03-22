@@ -1,0 +1,51 @@
+
+
+ <div class="container ">
+
+
+  <div class="row d-flex justify-content-center">
+  
+  
+    <div class="card-deck card-columns h-100 mx-auto  " *ngFor="let p of products">
+      <div class="card h-100 border-dark " style="width: 20rem;">
+        <img [src]="p.image" class="card-img-top" alt="...">
+        <div class="card-body ">
+          <h5 class="card-title font-weight-bold">{{p.title.slice(0,90)}}</h5>
+          <p class="card-text">{{verMas(p)}}</p>
+  
+          <div class="card-footer bg-transparent  align-items-end ">
+            <a class="btn btn-outline-danger btn-block align-self-end pointer"> <i class="fas fa-arrow-down"></i> Precio:
+              {{p.base_price}}</a>
+            <a class="btn btn-outline-success btn-block align-self-end pointer"><i class="fas fa-euro-sign"></i> Oferta:
+              {{p.current_price}}</a>
+            <a [href]="p.link" target="_blank" class="btn btn-outline-dark  btn-block align-self-end"><i
+                class="fas fa-cart-arrow-down"></i> Ir oferta</a>
+  
+          </div>
+  
+  
+  
+  
+        </div>
+      </div>
+  
+  
+  
+  
+    </div>
+    <nav class="fixed-bottom">
+      <ul class="pagination justify-content-center">
+        <li class="page-item ">
+          <a class="page-link" (click)="setPagina(-1)">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" (click)="setPagina(1)" >{{this.pagina+1}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="setPagina(2)" >{{this.pagina+2}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="setPagina(3)" >{{this.pagina+3}}</a></li>
+        <li class="page-item">
+          <a class="page-link" (click)="setPagina(1)" >Next</a>
+        </li>
+      </ul>
+    </nav>
+  
+  </div>
+ </div>

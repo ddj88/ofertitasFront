@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.spacing{
+margin:0.1cm;
+}
+
+.w-500{
+    width: 500px;
+}
+
+.h-200{
+    height: 200px;
+}
+
+.pointer{
+    cursor: pointer;
+}

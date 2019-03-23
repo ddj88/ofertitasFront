@@ -6,6 +6,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { OfertasComponent } from './components/ofertas/ofertas.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -57,11 +57,7 @@ export class OfertasComponent implements OnInit {
 
   setPagina(valor:number){
     this.pagina += valor;
-    console.log(this.pagina);
-    
-    
 
-    
     this.cargarOfertas();
 
   }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class NavbarComponent implements OnInit {
+ termino;
 
-  constructor() { }
+
+  constructor() { 
+    
+    
+    
+  }
 
   ngOnInit() {
+
+  }
+
+  buscar(termino){
+    this.termino=termino;
+    console.log(this.termino);
+    
   }
 
 }

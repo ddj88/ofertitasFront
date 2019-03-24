@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { OfertasService } from 'src/app/services/ofertas.service';
 import { Product } from 'src/models/product';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 
@@ -16,7 +17,9 @@ export class OfertasComponent implements OnInit {
   paginas:number=1;
   products:Product[]=[];
 
-  constructor( public _of:OfertasService) { }
+  //@Input('resultado') public resultado;
+
+  constructor( public _os:OfertasService) { }
 
   ngOnInit() {
 
@@ -26,11 +29,27 @@ export class OfertasComponent implements OnInit {
       console.log(p);
       
     });
+
+    
   }
+
+  // buscar() {
+  //   this.resultado;
+  //   console.log(this.resultado);
+  //   if (this.resultado.length >= 3) {
+
+  //     this._os.busqueda(this.resultado).subscribe((data: any) => {
+
+  //       this.products = data.result;
+  //       console.log(this.products);
+
+  //     })
+  //   }
+  // }
 
 
   cargarOfertas(){
-    this._of.ofertasGet().subscribe((data:any)=>{
+    this._os.ofertasGet().subscribe((data:any)=>{
       
       this.products=data.result;
       console.log(this.products);

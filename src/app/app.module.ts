@@ -8,20 +8,29 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
 
+import { BuscarComponent } from './components/buscar/buscar.component';
+import { OfertasService } from './services/ofertas.service';
+import { appRouting } from './app.routes';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     OfertasComponent,
-    CarruselComponent
+    CarruselComponent,
+    BuscarComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    appRouting
   ],
-  providers: [],
+  providers: [
+    OfertasService,
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

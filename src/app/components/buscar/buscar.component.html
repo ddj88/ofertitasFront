@@ -1,0 +1,38 @@
+<div class="container ">
+
+
+  <div class="row d-flex justify-content-center" *ngIf="products.length>0; else noResults">
+
+ 
+          <div class="card-deck card-columns" *ngFor="let p of products">
+
+                <div class="card h-100  " style="width: 20rem;">
+                  <img [src]="p.image" class="card-img-top" alt="...">
+                  <div class="card-body ">
+                    <h5 class="card-title font-weight-bold">{{p.title.slice(0,90)}}</h5>
+                    <p class="card-text">{{verMas(p)}}</p>
+                          <div class="card-footer bg-transparent  align-items-end ">
+                            <a type="button" class="btn btn-danger btn-block align-self-end"> <i class="fas fa-arrow-down"></i> Precio:
+                              {{p.base_price}}</a>
+                            <a type="button" class="btn btn-success btn-block align-self-end"><i class="fas fa-euro-sign"></i> Oferta:
+                              {{p.current_price}}</a>
+                            <a [href]="p.link" target="_blank" class="btn btn-outline-dark  btn-block align-self-end"><i
+                                class="fas fa-cart-arrow-down"></i> Ir oferta</a>
+                
+                          </div>
+        
+                      </div>
+                    </div>
+         
+        </div>
+                
+        
+      </div>
+          <ng-template #noResults>
+        <div class="alert alert-danger" role="alert">
+          No results
+        </div>
+        </ng-template>
+  </div>
+          
+          

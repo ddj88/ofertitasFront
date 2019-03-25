@@ -19,12 +19,8 @@ export class CarruselComponent implements OnInit {
 
 
   cargarOfertas() {
-    this._os.ofertasGet().subscribe((data: Product[]) => {
-
-      this.products = data;
-      console.log(this.products);
-
-
+    this._os.novedades().subscribe((data:any) => {
+      this.products = data.result;
     })
 
   }

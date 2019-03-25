@@ -11,6 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { OfertasService } from './services/ofertas.service';
 import { appRouting } from './app.routes';
+import { DesCortaPipe } from './pipe/des-corta.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { appRouting } from './app.routes';
     NavbarComponent,
     OfertasComponent,
     CarruselComponent,
-    BuscarComponent
+    BuscarComponent,
+    DesCortaPipe
   ],
   imports: [
     BrowserModule,

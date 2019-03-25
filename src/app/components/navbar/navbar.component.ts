@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
   nuevaBusqueda(termino){
     console.log('clickado');
     
-    if (termino.length>3) {
+    if (termino.length>2) {
       return this.router.navigate(['buscar',termino]);
     }
 

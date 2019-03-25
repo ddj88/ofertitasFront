@@ -13,14 +13,21 @@ export class OfertasService {
   constructor(public http:HttpClient) { }
 
 
-  ofertasGet(){
-    let url:string=this.urlApi+"/offers";
+  ofertasGet(pagina?:string){
+    let url:string;
+    if (pagina) {
+      url=this.urlApi+"offers/?page="+pagina;
+    }else{
+      url=this.urlApi+"offers";
+
+    }
 
     return this.http.get(url).pipe(map((resp:any)=>{
      return resp;
     })
     
     )}
+
 
 
   busqueda(termino){
@@ -38,6 +45,12 @@ export class OfertasService {
     
   
 
+  }
+
+
+  novedades(){
+    let url =this.urlApi+"/offers/news";
+    return this.http.get(url)
   }
 
 

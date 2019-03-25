@@ -15,7 +15,9 @@ import { Observable } from 'rxjs';
 export class OfertasComponent implements OnInit {
   pagina:number=1;
   paginas:number=1;
-  products:Product[]=[];
+  prevBtn:boolean=true;
+  nextBtn:boolean=true;
+  products:Product[];
 
   //@Input('resultado') public resultado;
 
@@ -24,61 +26,53 @@ export class OfertasComponent implements OnInit {
   ngOnInit() {
 
     this.cargarOfertas();
-
-    this.products.forEach(p => {
-      console.log(p);
-      
-    });
-
     
   }
 
-  // buscar() {
-  //   this.resultado;
-  //   console.log(this.resultado);
-  //   if (this.resultado.length >= 3) {
-
-  //     this._os.busqueda(this.resultado).subscribe((data: any) => {
-
-  //       this.products = data.result;
-  //       console.log(this.products);
-
-  //     })
-  //   }
-  // }
 
 
-  cargarOfertas(){
+  cargarOfertas(pagina?:string){
+    console.log(this.pagina);
+    
+    if (pagina) {
+      return this._os.ofertasGet(pagina).subscribe((data: any) => {
+        console.log(data);
+        
+        this.products = data.result;
+        this.pagina= data.currentPage;
+        this.paginas = data.pages;
+      });
+
+    }
     this._os.ofertasGet().subscribe((data:any)=>{
+      console.log(data);
       
       this.products=data.result;
-      console.log(this.products);
+      this.pagina = data.currentPage;
       this.paginas = data.pages;
-      console.log(this.paginas);
-      
-      
       });
       
     }
 
 
 
-  verMas(product:Product){
-    let desCorta:string;
-    if (product.description.length > 200) {
-      desCorta = product.description.slice(0,100)
-      return desCorta+"...";
-    }
-    return product.description;
+  // verMas(product:Product){
+  //   let desCorta:string;
+  //   if (product.description.length > 200) {
+  //     desCorta = product.description.slice(0,100)
+  //     return desCorta+"...";
+  //   }
+  //   return product.description;
   
 
-  }
+  // }
 
   setPagina(valor:number){
-    this.pagina += valor;
-
-    this.cargarOfertas();
-
+    
+    this.pagina=+valor;
+    
+    console.log(this.pagina);
+    this.cargarOfertas(this.pagina.toString());
   }
 
 

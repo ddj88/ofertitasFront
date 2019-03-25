@@ -408,7 +408,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n  <div class=\"row d-flex justify-content-center\" *ngIf=\"products\">\n \n  <div class=\"card-deck card-columns\" *ngFor=\"let p of products\">\n    <div class=\"card h-100  \" style=\"width: 20rem;\">\n      <img [src]=\"p.image\" class=\"card-img-top\" alt=\"...\">\n      <div class=\"card-body \">\n        <h5 class=\"card-title font-weight-bold\">{{p.title | desCorta}}</h5>\n        <!-- <p class=\"card-text\">{{p.description | desCorta}}</p> -->\n  \n        <div class=\"card-footer bg-transparent  align-items-end \">\n          <a type=\"button\" class=\"btn btn-danger btn-block align-self-end\"> <i class=\"fas fa-arrow-down\"></i> Precio:\n            {{p.base_price}}</a>\n          <a type=\"button\" class=\"btn btn-success btn-block align-self-end\"><i class=\"fas fa-euro-sign\"></i> Oferta:\n            {{p.current_price}}</a>\n          <a [href]=\"p.link\" target=\"_blank\" class=\"btn btn-outline-dark  btn-block align-self-end\"><i\n              class=\"fas fa-cart-arrow-down\"></i> Ir oferta</a>\n  \n        </div>\n  \n      </div>\n    </div>\n  \n\n  \n  </div>\n  <nav class=\"fixed-bottom\">\n    <ul class=\"pagination justify-content-center pagination-lg \">\n      <li class=\"page-item \">\n        <button class=\"page-link pointer border border-dark\" (click)=\"setPagina(pagina-1) \"\n          [disabled]=\"!prevBtn\">Previous</button>\n      </li>\n  \n      <li class=\"page-item\">\n        <button class=\"page-link pointer border border-dark\" (click)=\"setPagina(pagina+1)\"\n          [disabled]=\"!nextBtn\">Next</button>\n      </li>\n    </ul>\n  </nav>\n  <br>\n  <br>\n  \n\n  </div>\n\n"
+module.exports = "\n\n  <div class=\"row d-flex justify-content-center\" *ngIf=\"products\">\n \n  <div class=\"card-deck card-columns\" *ngFor=\"let p of products\">\n    <div class=\"card h-100  \" style=\"width: 20rem;\">\n      <img [src]=\"p.image\" class=\"card-img-top\" alt=\"...\">\n      <div class=\"card-body \">\n        <h5 class=\"card-title font-weight-bold\">{{p.title | desCorta}}</h5>\n        <!-- <p class=\"card-text\">{{p.description | desCorta}}</p> -->\n  \n        <div class=\"card-footer bg-transparent  align-items-end \">\n          <a class=\"btn btn-danger btn-block align-self-end\"> <i class=\"fas fa-arrow-down\"></i> Precio:\n            {{p.base_price}}</a>\n          <a class=\"btn btn-success btn-block align-self-end\"><i class=\"fas fa-euro-sign\"></i> Oferta:\n            {{p.current_price}}</a>\n          <a [href]=\"p.link\" target=\"_blank\" class=\"btn btn-outline-dark  btn-block align-self-end\"><i\n              class=\"fas fa-cart-arrow-down\"></i> Ir oferta</a>\n  \n        </div>\n  \n      </div>\n    </div>\n  \n\n  \n  </div>\n  <nav class=\"fixed-bottom\">\n    <ul class=\"pagination justify-content-center pagination-lg \">\n      <li class=\"page-item \">\n        <button class=\"page-link pointer border border-dark\" (click)=\"setPagina(1) \"\n          [disabled]=\"!prevBtn\">Previous</button>\n      </li>\n  \n      <li class=\"page-item\">\n        <button class=\"page-link pointer border border-dark\" (click)=\"setPagina(2)\"\n          [disabled]=\"!nextBtn\">Next</button>\n      </li>\n    </ul>\n  </nav>\n  <br>\n  <br>\n  \n\n  </div>\n\n"
 
 /***/ }),
 
@@ -474,9 +474,21 @@ var OfertasComponent = /** @class */ (function () {
     //   return product.description;
     // }
     OfertasComponent.prototype.setPagina = function (valor) {
-        this.pagina = +valor;
+        if (valor === 1) {
+            if (this.pagina === 1) {
+                return;
+            }
+            this.pagina--;
+            this.cargarOfertas(this.pagina.toString());
+        }
+        if (valor === 2) {
+            if (this.pagina === this.paginas) {
+                return;
+            }
+            this.pagina++;
+            this.cargarOfertas(this.pagina.toString());
+        }
         console.log(this.pagina);
-        this.cargarOfertas(this.pagina.toString());
     };
     OfertasComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

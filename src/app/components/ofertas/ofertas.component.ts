@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OfertasService } from 'src/app/services/ofertas.service';
 import { Product } from 'src/models/product';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+
 
 
 
@@ -69,10 +68,29 @@ export class OfertasComponent implements OnInit {
 
   setPagina(valor:number){
     
-    this.pagina=+valor;
+    
+    if (valor===1) {
+      if (this.pagina===1) {
+       
+        return;
+      }
+      this.pagina--;
+      this.cargarOfertas(this.pagina.toString());
+      
+    }
+    if(valor===2){
+      if (this.pagina===this.paginas) {
+       
+        return;
+      }
+      this.pagina++;
+      this.cargarOfertas(this.pagina.toString());
+    }
+  
+
+    
     
     console.log(this.pagina);
-    this.cargarOfertas(this.pagina.toString());
   }
 
 

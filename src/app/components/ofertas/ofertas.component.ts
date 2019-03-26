@@ -32,7 +32,7 @@ export class OfertasComponent implements OnInit {
 
   cargarOfertas(pagina?:string){
     console.log(this.pagina);
-    
+    window.scrollTo(0, 0);
     if (pagina) {
       return this._os.ofertasGet(pagina).subscribe((data: any) => {
         console.log(data);

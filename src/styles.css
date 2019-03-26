@@ -1,21 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
-.spacing{
-margin:0.1cm;
+.spacing {
+  margin: 0.1cm;
 }
 
-.w-500{
-    width: 500px;
+.w-500 {
+  width: 500px;
 }
 
-.h-200{
-    height: 200px;
+.h-200 {
+  height: 200px;
 }
 
-.pointer{
-    cursor: pointer;
+.pointer {
+  cursor: pointer;
 }
 
-footer{
+footer {
 
-    margin-top: 50px;
+  margin-top: 50px;
+}
+
+
+.card {
+  border: none;
+  border-radius: 0;
+  background-color: #f9f9f9;
+}
+
+
+.card .img-fluid {
+  max-width: 90%;
+  margin: 10px auto 0;
+}
+
+.card h3 {
+  font-size: 120%;
 }

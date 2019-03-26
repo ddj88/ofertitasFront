@@ -15,6 +15,9 @@
             Oferta:{{p.current_price}}€
           </p>
         </div>
+        <a href="" class="btn btn-outline-danger btn-block align-self-end">
+          <i class="far fa-heart"></i> {{p.points}}
+        </a>
         <a [href]="p.link" target="_blank" class="btn btn-outline-dark btn-block align-self-end"><i
           class="fas fa-sticky-note"></i> Ver oferta</a>
         <a [href]="p.link" target="_blank" class="btn btn-success btn-block align-self-end"><i
@@ -25,13 +28,13 @@
   <nav class="fixed-bottom">
     <ul class="pagination justify-content-center pagination-lg ">
       <li class="page-item ">
-        <button class="page-link pointer border border-dark" (click)="setPagina(1) "
+        <button class="page-link pointer" (click)="setPagina(1) "
                 [disabled]="!prevBtn"><<
         </button>
       </li>
 
       <li class="page-item">
-        <button class="page-link pointer border border-dark" (click)="setPagina(2)"
+        <button class="page-link pointer" (click)="setPagina(2)"
                 [disabled]="!nextBtn"> >>
         </button>
       </li>

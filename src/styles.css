@@ -20,13 +20,11 @@ footer {
   margin-top: 50px;
 }
 
-
 .card {
   border: none;
   border-radius: 0;
   background-color: #f9f9f9;
 }
-
 
 .card .img-fluid {
   max-width: 90%;
@@ -35,4 +33,14 @@ footer {
 
 .card h3 {
   font-size: 120%;
+}
+
+.page-item button {
+  color: #6c757d;
+}
+
+.page-item button:hover {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }

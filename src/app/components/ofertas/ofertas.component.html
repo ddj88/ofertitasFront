@@ -1,11 +1,11 @@
 
 
-  <div class="row d-flex justify-content-center" *ngIf="products">
+  <div class="row d-flex justify-content-center mr-1 pr-1" *ngIf="products">
  
-  <div class="card-deck card-columns" *ngFor="let p of products">
+  <div class="card-deck card-columns spacing  " *ngFor="let p of products">
     <div class="card h-100  " style="width: 20rem;">
-      <img [src]="p.image" class="card-img-top" alt="...">
-      <div class="card-body ">
+      <img [src]="p.image" class=" img-thumbnail " alt="...">
+      <div class="card-body  ">
         <h5 class="card-title font-weight-bold">{{p.title | desCorta}}</h5>
         <!-- <p class="card-text">{{p.description | desCorta}}</p> -->
   

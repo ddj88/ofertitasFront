@@ -2,7 +2,8 @@ import { Component, OnInit, Output, EventEmitter, } from '@angular/core';
 import { Router } from '@angular/router';
 import { OfertasService } from 'src/app/services/ofertas.service';
 import { Product } from 'src/models/product';
-import {  Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 
@@ -15,7 +16,7 @@ export class NavbarComponent implements OnInit {
  termino:string="";
  productos:Product[]=[];
   @Output() resultado=new EventEmitter;
-
+busqueda;
 
   constructor(public router:Router, public _os:OfertasService) { 
     
@@ -24,7 +25,17 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(typeof(this.resultado));
+    
+    this.resultado.subscribe(r=>{
+      this._os.busqueda(r).subscribe((res)=>{
+        this.busqueda=res;
+        console.log(this.busqueda);
+        
+      }
+      )
+    }
+    )
+    
     
   }
 

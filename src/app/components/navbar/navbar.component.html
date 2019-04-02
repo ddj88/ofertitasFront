@@ -30,13 +30,13 @@
             -------dropdown
             ============================-->
 
-            <div class="dropdown">
-              <input #input  (keyup)=buscar(input.value) class="form-control mr-sm-2" type="search" placeholder="Search" data-toggle="dropdown"
+            <div class="dropdown" >
+              <input #input  (keyup)=buscar(input.value) class="form-control mr-sm-2" type="search" placeholder="buscar..." data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
 
-              <div id="menu" class="dropdown-menu" style="width:800px" aria-labelledby="dropdown_coins">
+              <div  id="menu" class="dropdown-menu" style="width:800px" aria-labelledby="dropdown_coins"  >
 
-                  <ul class="list-unstyled"  id="empty">
+                  <ul class="list-unstyled"  id="empty" >
                     <li class="media "*ngFor="let p of busqueda">
                       <img class="img-thumbnail" style="width:50px; height:50px" [src]="p.image" alt="">
                       <div class="media-body" >
@@ -45,7 +45,7 @@
                     </li>
                   </ul>
 
-                <button class="btn btn-outline-success my-2 my-sm-0 float-right" type="submit" (click)=nuevaBusqueda(input.value)>Search</button>
+                <button *ngIf="busqueda" class="btn btn-outline-success my-2 my-sm-0 float-right" type="submit" (click)=nuevaBusqueda(input.value)>Search</button>
               </div>
             </div>
           </ul>

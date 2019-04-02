@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAvYXBwLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -104,12 +104,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_ofertas_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/ofertas.service */ "./src/app/services/ofertas.service.ts");
 /* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.routes */ "./src/app/app.routes.ts");
 /* harmony import */ var _pipe_des_corta_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pipe/des-corta.pipe */ "./src/app/pipe/des-corta.pipe.ts");
+/* harmony import */ var _components_novedades_novedades_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/novedades/novedades.component */ "./src/app/components/novedades/novedades.component.ts");
+/* harmony import */ var _directivas_votado_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./directivas/votado.directive */ "./src/app/directivas/votado.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -134,7 +138,9 @@ var AppModule = /** @class */ (function () {
                 _components_ofertas_ofertas_component__WEBPACK_IMPORTED_MODULE_5__["OfertasComponent"],
                 _components_carrusel_carrusel_component__WEBPACK_IMPORTED_MODULE_6__["CarruselComponent"],
                 _components_buscar_buscar_component__WEBPACK_IMPORTED_MODULE_9__["BuscarComponent"],
-                _pipe_des_corta_pipe__WEBPACK_IMPORTED_MODULE_12__["DesCortaPipe"]
+                _pipe_des_corta_pipe__WEBPACK_IMPORTED_MODULE_12__["DesCortaPipe"],
+                _components_novedades_novedades_component__WEBPACK_IMPORTED_MODULE_13__["NovedadesComponent"],
+                _directivas_votado_directive__WEBPACK_IMPORTED_MODULE_14__["VotadoDirective"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -250,8 +256,7 @@ var BuscarComponent = /** @class */ (function () {
     BuscarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-buscar',
-            template: __webpack_require__(/*! ./buscar.component.html */ "./src/app/components/buscar/buscar.component.html"),
-            styles: []
+            template: __webpack_require__(/*! ./buscar.component.html */ "./src/app/components/buscar/buscar.component.html")
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
             src_app_services_ofertas_service__WEBPACK_IMPORTED_MODULE_2__["OfertasService"]])
@@ -314,8 +319,7 @@ var CarruselComponent = /** @class */ (function () {
     CarruselComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-carrusel',
-            template: __webpack_require__(/*! ./carrusel.component.html */ "./src/app/components/carrusel/carrusel.component.html"),
-            styles: []
+            template: __webpack_require__(/*! ./carrusel.component.html */ "./src/app/components/carrusel/carrusel.component.html")
         }),
         __metadata("design:paramtypes", [src_app_services_ofertas_service__WEBPACK_IMPORTED_MODULE_1__["OfertasService"]])
     ], CarruselComponent);
@@ -333,7 +337,7 @@ var CarruselComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n    <nav class=\"navbar navbar-expand-lg navbar-light bg-light fixed-top\">\r\n      <div class=\"container\">\r\n      <a class=\"navbar-brand\">Ofertitas.club</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\r\n        aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n    \r\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n          <li class=\"nav-item active\">\r\n            <a class=\"nav-link\" routerLink=\"/home\">Home <span class=\"sr-only\">(current)</span></a>\r\n          </li>\r\n    \r\n          <li class=\"nav-item dropdown\">\r\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n              aria-haspopup=\"true\" aria-expanded=\"false\">\r\n              Categorias\r\n            </a>\r\n            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n              <a class=\"dropdown-item\" href=\"#\">Action</a>\r\n              <a class=\"dropdown-item\" href=\"#\">Another action</a>\r\n              <div class=\"dropdown-divider\"></div>\r\n              <a class=\"dropdown-item\" href=\"#\">Something else here</a>\r\n            </div>\r\n          </li>\r\n\r\n          <!--===========================\r\n            -------dropdown\r\n            ============================-->\r\n\r\n            <div class=\"dropdown\">\r\n              <input #input  (keyup)=buscar(input.value) class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" data-toggle=\"dropdown\"\r\n              aria-haspopup=\"true\" aria-expanded=\"false\">\r\n\r\n              <div id=\"menu\" class=\"dropdown-menu\" style=\"width:800px\" aria-labelledby=\"dropdown_coins\">\r\n\r\n                  <ul class=\"list-unstyled\"  id=\"empty\">\r\n                    <li class=\"media \"*ngFor=\"let p of busqueda\">\r\n                      <img class=\"img-thumbnail\" style=\"width:50px; height:50px\" [src]=\"p.image\" alt=\"\">\r\n                      <div class=\"media-body\" >\r\n                        <a [href]=\"p.link\" target=\"_blank\" class=\"btn btn-outline-dark  btn-block align-self-end btn-block\">{{p.title | desCorta}} </a>\r\n                      </div>\r\n                    </li>\r\n                  </ul>\r\n\r\n                <button class=\"btn btn-outline-success my-2 my-sm-0 float-right\" type=\"submit\" (click)=nuevaBusqueda(input.value)>Search</button>\r\n              </div>\r\n            </div>\r\n          </ul>\r\n\r\n      </div>\r\n      </div>\r\n    </nav>\r\n"
+module.exports = "\r\n    <nav class=\"navbar navbar-expand-lg navbar-light bg-light fixed-top\">\r\n      <div class=\"container\">\r\n      <a class=\"navbar-brand\">Ofertitas.club</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\r\n        aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n    \r\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n          <li class=\"nav-item active\">\r\n            <a class=\"nav-link\" routerLink=\"/home\">Home <span class=\"sr-only\">(current)</span></a>\r\n          </li>\r\n    \r\n          <li class=\"nav-item dropdown\">\r\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n              aria-haspopup=\"true\" aria-expanded=\"false\">\r\n              Categorias\r\n            </a>\r\n            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n              <a class=\"dropdown-item\" href=\"#\">Action</a>\r\n              <a class=\"dropdown-item\" href=\"#\">Another action</a>\r\n              <div class=\"dropdown-divider\"></div>\r\n              <a class=\"dropdown-item\" href=\"#\">Something else here</a>\r\n            </div>\r\n          </li>\r\n\r\n          <!--===========================\r\n            -------dropdown\r\n            ============================-->\r\n\r\n            <div class=\"dropdown\" >\r\n              <input #input  (keyup)=buscar(input.value) class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"buscar...\" data-toggle=\"dropdown\"\r\n              aria-haspopup=\"true\" aria-expanded=\"false\">\r\n\r\n              <div  id=\"menu\" class=\"dropdown-menu\" style=\"width:800px\" aria-labelledby=\"dropdown_coins\"  >\r\n\r\n                  <ul class=\"list-unstyled\"  id=\"empty\" >\r\n                    <li class=\"media \"*ngFor=\"let p of busqueda\">\r\n                      <img class=\"img-thumbnail\" style=\"width:50px; height:50px\" [src]=\"p.image\" alt=\"\">\r\n                      <div class=\"media-body\" >\r\n                        <a [href]=\"p.link\" target=\"_blank\" class=\"btn btn-outline-dark  btn-block align-self-end btn-block\">{{p.title | desCorta}} </a>\r\n                      </div>\r\n                    </li>\r\n                  </ul>\r\n\r\n                <button *ngIf=\"busqueda\" class=\"btn btn-outline-success my-2 my-sm-0 float-right\" type=\"submit\" (click)=nuevaBusqueda(input.value)>Search</button>\r\n              </div>\r\n            </div>\r\n          </ul>\r\n\r\n      </div>\r\n      </div>\r\n    </nav>\r\n"
 
 /***/ }),
 
@@ -375,7 +379,6 @@ var NavbarComponent = /** @class */ (function () {
         this.resultado.subscribe(function (r) {
             _this._os.busqueda(r).subscribe(function (res) {
                 _this.busqueda = res;
-                console.log(_this.busqueda);
             });
         });
     };
@@ -395,12 +398,62 @@ var NavbarComponent = /** @class */ (function () {
     NavbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-navbar',
-            template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/components/navbar/navbar.component.html"),
-            styles: []
+            template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/components/navbar/navbar.component.html")
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], src_app_services_ofertas_service__WEBPACK_IMPORTED_MODULE_2__["OfertasService"]])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/novedades/novedades.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/novedades/novedades.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  novedades works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/novedades/novedades.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/novedades/novedades.component.ts ***!
+  \*************************************************************/
+/*! exports provided: NovedadesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NovedadesComponent", function() { return NovedadesComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NovedadesComponent = /** @class */ (function () {
+    function NovedadesComponent() {
+    }
+    NovedadesComponent.prototype.ngOnInit = function () {
+    };
+    NovedadesComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-novedades',
+            template: __webpack_require__(/*! ./novedades.component.html */ "./src/app/components/novedades/novedades.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], NovedadesComponent);
+    return NovedadesComponent;
 }());
 
 
@@ -414,7 +467,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row d-flex justify-content-center\" *ngIf=\"products\">\r\n  <div class=\"col-sm-12 col-md-6 col-lg-4 col-xl-3\" *ngFor=\"let p of products\" style=\"margin-bottom: 1.5em\">\r\n    <div class=\"card h-100\">\r\n      <img [src]=\"p.image\" class=\"img-fluid\" alt=\"...\">\r\n      <div class=\"card-body \">\r\n        <h3 class=\"card-title font-weight-bold\">{{p.title | desCorta}}</h3>\r\n        <!-- <p class=\"card-text\">{{p.description | desCorta}}</p> -->\r\n      </div>\r\n      <div class=\"card-footer bg-transparent  align-items-end \">\r\n        <div class=\"d-flex flex-row justify-content-between\">\r\n          <p *ngIf=\"p.base_price > 0\">\r\n            <del class=\"text-danger\">Precio: {{p.base_price}}€</del>\r\n          </p>\r\n          <p class=\"font-weight-bold\" *ngIf=\"p.current_price > 0\">\r\n            Oferta:{{p.current_price}}€\r\n          </p>\r\n        </div>\r\n        <a href=\"\" class=\"btn btn-outline-danger btn-block align-self-end\">\r\n          <i class=\"far fa-heart\"></i> {{p.points}}\r\n        </a>\r\n        <a [href]=\"p.link\" target=\"_blank\" class=\"btn btn-outline-dark btn-block align-self-end\"><i\r\n          class=\"fas fa-sticky-note\"></i> Ver oferta</a>\r\n        <a [href]=\"p.link\" target=\"_blank\" class=\"btn btn-success btn-block align-self-end\"><i\r\n          class=\"fas fa-cart-arrow-down\"></i> Comprar ahora!</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <nav class=\"fixed-bottom\">\r\n    <ul class=\"pagination justify-content-center pagination-lg \">\r\n      <li class=\"page-item \">\r\n        <button class=\"page-link pointer\" (click)=\"setPagina(1) \"\r\n                [disabled]=\"!prevBtn\"><<\r\n        </button>\r\n      </li>\r\n\r\n      <li class=\"page-item\">\r\n        <button class=\"page-link pointer\" (click)=\"setPagina(2)\"\r\n                [disabled]=\"!nextBtn\"> >>\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"row d-flex justify-content-center\" *ngIf=\"products\">\r\n  <div class=\"col-sm-12 col-md-6 col-lg-4 col-xl-3\" *ngFor=\"let p of products\" style=\"margin-bottom: 1.5em\">\r\n    <div class=\"card h-100\">\r\n      <img [src]=\"p.image\" class=\"img-fluid\" alt=\"...\">\r\n      <div class=\"card-body \">\r\n        <h3 class=\"card-title font-weight-bold\">{{p.title | desCorta}}</h3>\r\n        <!-- <p class=\"card-text\">{{p.description | desCorta}}</p> -->\r\n      </div>\r\n      <div class=\"card-footer bg-transparent  align-items-end \">\r\n        <div class=\"d-flex flex-row justify-content-between\">\r\n          <p *ngIf=\"p.base_price > 0\">\r\n            <del class=\"text-danger\">Precio: {{p.base_price}}€</del>\r\n          </p>\r\n          <p class=\"font-weight-bold\" *ngIf=\"p.current_price > 0\">\r\n            Oferta:{{p.current_price}}€\r\n          </p>\r\n        </div>\r\n        <a *ngIf=\"p.voted===0\" \r\n        (click)=\"votador(p.id,$event)\"   \r\n        class=\"btn btn-outline-danger btn-block align-self-end pointer\"\r\n       appVotado\r\n         >\r\n          <i class=\"far fa-heart\" ></i> {{p.points}} votar\r\n        </a>\r\n        \r\n        <a *ngIf=\"p.voted===1\" \r\n       \r\n        class=\"btn btn-success btn-block align-self-end disabled\">\r\n          <i class=\"far fa-heart\"></i> {{p.points}} Votado ;)\r\n        </a>\r\n\r\n\r\n    \r\n        <a [href]=\"p.link\" target=\"_blank\" class=\"btn btn-success btn-block align-self-end\"><i\r\n          class=\"fas fa-cart-arrow-down\"></i> Comprar ahora!</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <nav class=\"fixed-bottom\">\r\n    <ul class=\"pagination justify-content-center pagination-lg \">\r\n      <li class=\"page-item \">\r\n        <button class=\"page-link pointer\" (click)=\"setPagina(1) \"\r\n                [disabled]=\"!prevBtn\">\r\n        </button>\r\n      </li>\r\n\r\n      <li class=\"page-item\">\r\n        <button class=\"page-link pointer\" (click)=\"setPagina(2)\"\r\n                [disabled]=\"!nextBtn\">\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -463,6 +516,7 @@ var OfertasComponent = /** @class */ (function () {
                 _this.products = data.result;
                 _this.pagina = data.currentPage;
                 _this.paginas = data.pages;
+                _this.votos = data.points;
             });
         }
         this._os.ofertasGet().subscribe(function (data) {
@@ -497,15 +551,69 @@ var OfertasComponent = /** @class */ (function () {
         }
         console.log(this.pagina);
     };
+    OfertasComponent.prototype.votador = function (id, event) {
+        this._os.votar(id).subscribe(function (resp) {
+        });
+    };
     OfertasComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-ofertas',
-            template: __webpack_require__(/*! ./ofertas.component.html */ "./src/app/components/ofertas/ofertas.component.html"),
-            styles: []
+            template: __webpack_require__(/*! ./ofertas.component.html */ "./src/app/components/ofertas/ofertas.component.html")
         }),
         __metadata("design:paramtypes", [src_app_services_ofertas_service__WEBPACK_IMPORTED_MODULE_1__["OfertasService"]])
     ], OfertasComponent);
     return OfertasComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/directivas/votado.directive.ts":
+/*!************************************************!*\
+  !*** ./src/app/directivas/votado.directive.ts ***!
+  \************************************************/
+/*! exports provided: VotadoDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VotadoDirective", function() { return VotadoDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var VotadoDirective = /** @class */ (function () {
+    function VotadoDirective(renderer, el) {
+        this.renderer = renderer;
+        this.el = el;
+    }
+    VotadoDirective.prototype.click = function () {
+        this.renderer.removeClass(this.el.nativeElement, "btn-outline-danger");
+        this.renderer.addClass(this.el.nativeElement, "btn-success");
+        this.renderer.addClass(this.el.nativeElement, "disabled");
+        this.renderer.setProperty(this.el.nativeElement, "innerHTML", "Votado!");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('click'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], VotadoDirective.prototype, "click", null);
+    VotadoDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appVotado]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]])
+    ], VotadoDirective);
+    return VotadoDirective;
 }());
 
 
@@ -597,7 +705,6 @@ var OfertasService = /** @class */ (function () {
         var limit = "&limit=5";
         var page = "&page=1";
         url += query + limit + page;
-        console.log(url);
         return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
             return data.result;
         }));
@@ -605,6 +712,13 @@ var OfertasService = /** @class */ (function () {
     OfertasService.prototype.novedades = function () {
         var url = this.urlApi + "/offers/news";
         return this.http.get(url);
+    };
+    OfertasService.prototype.votar = function (id) {
+        var url = this.urlApi + "/vote/";
+        var body = {
+            'offer_id': id
+        };
+        return this.http.post(url, body);
     };
     OfertasService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

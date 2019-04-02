@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { OfertasService } from 'src/app/services/ofertas.service';
 import { Product } from 'src/models/product';
 
@@ -17,7 +17,8 @@ export class OfertasComponent implements OnInit {
   prevBtn:boolean=true;
   nextBtn:boolean=true;
   products:Product[];
-
+  votos:number;
+  
   //@Input('resultado') public resultado;
 
   constructor( public _os:OfertasService) { }
@@ -40,6 +41,7 @@ export class OfertasComponent implements OnInit {
         this.products = data.result;
         this.pagina= data.currentPage;
         this.paginas = data.pages;
+        this.votos= data.points;
       });
 
     }
@@ -92,6 +94,14 @@ export class OfertasComponent implements OnInit {
     
     console.log(this.pagina);
   }
+
+  votador(id,event){
+   
+     
+    this._os.votar(id).subscribe(resp=>{
+      
+    })
+      }
 
 
           

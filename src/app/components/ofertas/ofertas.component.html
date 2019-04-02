@@ -15,11 +15,22 @@
             Oferta:{{p.current_price}}€
           </p>
         </div>
-        <a href="" class="btn btn-outline-danger btn-block align-self-end">
-          <i class="far fa-heart"></i> {{p.points}}
+        <a *ngIf="p.voted===0" 
+        (click)="votador(p.id,$event)"   
+        class="btn btn-outline-danger btn-block align-self-end pointer"
+       appVotado
+         >
+          <i class="far fa-heart" ></i> {{p.points}} votar
         </a>
-        <a [href]="p.link" target="_blank" class="btn btn-outline-dark btn-block align-self-end"><i
-          class="fas fa-sticky-note"></i> Ver oferta</a>
+        
+        <a *ngIf="p.voted===1" 
+       
+        class="btn btn-success btn-block align-self-end disabled">
+          <i class="far fa-heart"></i> {{p.points}} Votado ;)
+        </a>
+
+
+    
         <a [href]="p.link" target="_blank" class="btn btn-success btn-block align-self-end"><i
           class="fas fa-cart-arrow-down"></i> Comprar ahora!</a>
       </div>
@@ -29,13 +40,13 @@
     <ul class="pagination justify-content-center pagination-lg ">
       <li class="page-item ">
         <button class="page-link pointer" (click)="setPagina(1) "
-                [disabled]="!prevBtn"><<
+                [disabled]="!prevBtn">
         </button>
       </li>
 
       <li class="page-item">
         <button class="page-link pointer" (click)="setPagina(2)"
-                [disabled]="!nextBtn"> >>
+                [disabled]="!nextBtn">
         </button>
       </li>
     </ul>

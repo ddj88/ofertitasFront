@@ -36,7 +36,7 @@ export class OfertasService {
     let limit: string ="&limit=5";
     let page:string="&page=1";
     url+=query+limit+page;
-    console.log(url);
+
     
     return this.http.get(url).pipe(map((data:any)=>{
       return data.result;
@@ -54,6 +54,15 @@ export class OfertasService {
   }
 
 
+  votar(id){
+    let url = this.urlApi+"/vote/";
+    let body={
+      'offer_id':id
+    }
+    return this.http.post(url,body)
+  }
+
+border_clear
     }
 
 

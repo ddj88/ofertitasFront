@@ -29,7 +29,7 @@ busqueda;
     this.resultado.subscribe(r=>{
       this._os.busqueda(r).subscribe((res)=>{
         this.busqueda=res;
-        console.log(this.busqueda);
+      
         
       }
       )
@@ -41,6 +41,8 @@ busqueda;
 
   buscar(resultado) {
     this.resultado.emit(resultado); 
+   
+    
   }
 
   nuevaBusqueda(termino){

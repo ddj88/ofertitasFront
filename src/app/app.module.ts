@@ -12,6 +12,8 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 import { OfertasService } from './services/ofertas.service';
 import { appRouting } from './app.routes';
 import { DesCortaPipe } from './pipe/des-corta.pipe';
+import { NovedadesComponent } from './components/novedades/novedades.component';
+import { VotadoDirective } from './directivas/votado.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DesCortaPipe } from './pipe/des-corta.pipe';
     OfertasComponent,
     CarruselComponent,
     BuscarComponent,
-    DesCortaPipe
+    DesCortaPipe,
+    NovedadesComponent,
+    VotadoDirective
   ],
   imports: [
     BrowserModule,

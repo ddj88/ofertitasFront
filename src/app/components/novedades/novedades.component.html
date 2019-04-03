@@ -1,3 +1,47 @@
-<p>
-  novedades works!
-</p>
+<div class="row d-flex justify-content-center" *ngIf="products">
+  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let p of products" style="margin-bottom: 1.5em">
+    <div class="card h-100">
+      <img [src]="p.image" class="img-fluid" alt="...">
+      <div class="card-body ">
+        <h3 class="card-title font-weight-bold">{{p.title | desCorta}}</h3>
+        <!-- <p class="card-text">{{p.description | desCorta}}</p> -->
+      </div>
+      <div class="card-footer bg-transparent  align-items-end ">
+        <div class="d-flex flex-row justify-content-between">
+          <p *ngIf="p.base_price > 0">
+            <del class="text-danger">Precio: {{p.base_price}}€</del>
+          </p>
+          <p class="font-weight-bold" *ngIf="p.current_price > 0">
+            Oferta:{{p.current_price}}€
+          </p>
+        </div>
+        <a *ngIf="p.voted===0" (click)="votador(p.id,$event)"
+          class="btn btn-outline-danger btn-block align-self-end pointer" appVotado>
+          <i class="far fa-heart"></i> {{p.points}} votar
+        </a>
+
+        <a *ngIf="p.voted===1" class="btn btn-success btn-block align-self-end disabled">
+          <i class="far fa-heart"></i> {{p.points}} Votado ;)
+        </a>
+
+
+
+        <a [href]="p.link" target="_blank" class="btn btn-success btn-block align-self-end"><i
+            class="fas fa-cart-arrow-down"></i> Comprar ahora!</a>
+      </div>
+    </div>
+  </div>
+  <nav class="fixed-bottom">
+    <ul class="pagination justify-content-center pagination-lg ">
+      <li class="page-item ">
+        <button class="page-link pointer" (click)="setPagina(1) " [disabled]="!prevBtn">
+        </button>
+      </li>
+
+      <li class="page-item">
+        <button class="page-link pointer" (click)="setPagina(2)" [disabled]="!nextBtn">
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { OfertasService } from 'src/app/services/ofertas.service';
 import { Product } from 'src/models/product';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 
@@ -21,14 +22,33 @@ export class OfertasComponent implements OnInit {
   
   //@Input('resultado') public resultado;
 
-  constructor( public _os:OfertasService) { }
+  constructor( public _os:OfertasService, public router:Router) { }
 
   ngOnInit() {
 
-    this.cargarOfertas();
-    
+    if (this.router.url==="/novedades") {
+      
+      this.cargarNovedades();
+    }else{
+     
+      this.cargarOfertas();
+      
+    }
+
+   
   }
 
+
+  cargarNovedades(){
+   return  this._os.novedades().subscribe((data:any)=>{
+    console.log(data);
+    
+      this.products = data.result;
+      this.pagina = data.currentPage;
+      this.paginas = data.pages;
+      this.votos = data.points;
+    })
+  }
 
 
   cargarOfertas(pagina?:string){

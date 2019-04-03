@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OfertasComponent } from '../ofertas/ofertas.component';
+import { OfertasService } from 'src/app/services/ofertas.service';
 
 @Component({
   selector: 'app-novedades',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovedadesComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _oc:OfertasService) { }
 
   ngOnInit() {
   }
 
+
+
+  novedades(){
+    this._oc.novedades().subscribe(resp=>console.log(resp)
+    )
+  }
 }

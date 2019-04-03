@@ -10,7 +10,10 @@ import { Product } from 'src/models/product';
 export class OfertasService {
   urlApi ="https://api.ofertitas.club/v1/"
   products: Product[] = [];
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient) {
+
+    this.novedades();
+   }
 
 
   ofertasGet(pagina?:string){
@@ -50,6 +53,8 @@ export class OfertasService {
 
   novedades(){
     let url =this.urlApi+"/offers/news";
+    console.log(url);
+    
     return this.http.get(url)
   }
 
@@ -62,7 +67,6 @@ export class OfertasService {
     return this.http.post(url,body)
   }
 
-border_clear
     }
 
 
